@@ -1,4 +1,5 @@
- - hosts: nodes
+--- 
+- hosts: nodes
    tasks:
      - name: install apache2
        package:
@@ -10,5 +11,5 @@
          state: started
      - name: update the index file
        copy: 
-         content: <h1> "Welcome to Capgemini" </h1>
+         content: "<h1> Welcome to Capgemini"
          dest: /var/www/html/index.html
