@@ -1,0 +1,14 @@
+ - hosts: nodes
+   tasks:
+     - name: install apache2
+       package:
+         name: apache2
+         state: present
+     - name: check apache service
+       service:
+         name: apache2
+         state: started
+     - name: update the index file
+       copy: 
+         content: <h1> "Welcome to Capgemini" </h1>
+         dest: /var/www/html/index.html
